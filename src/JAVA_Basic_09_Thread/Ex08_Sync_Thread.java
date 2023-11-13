@@ -59,3 +59,10 @@ public class Ex08_Sync_Thread {
         park.start();
     }
 }
+/*
+트랜잭션 > 하나의 노리적인 작업 단위
+
+동기화
+카드 복제 : 5 장
+
+ */
