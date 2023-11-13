@@ -1,5 +1,6 @@
 package JAVA_Basic_09_Thread;
 /*
+멀티 스레드 환경에서의 동기화!!!!!!!!
 멀티 스레드 환경 ( 공유자원 ..)
 synchronized (동기화)
 
