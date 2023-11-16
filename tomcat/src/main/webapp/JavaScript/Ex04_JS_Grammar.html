@@ -37,9 +37,30 @@
         console.log(1 === 1); //true
         console.log(1 == '1');//true
 
+        for (let i = 2; i < 10; i++) {
+            for (let j = 1; j < 10; j++) {
+                document.write(i + "*" + j + "=" + i * j + "&nbsp;");
+            }
+            document.write("<br>");
+        }
+
+        //java: public int myCallFunction(int i, int j, int k) {return i+j+K}
+        function myCallFunction(i, j, k) {
+            return i+j+k;
+        }
+        let result0 = myCallFunction(1,2,3);
+        console.log(result0);
+        //javascript 이름 없는 함수 (익명함수)
+        //이름이 없다 (한번만 쓰겠다, 재사용하지 않겠다)
+        //function 이름 {}
+
+        changeColor = function (){//함수 이름 없다.. 함수도 하나의 객체 return
+            window.document.bgColor = "silver";
+            window.document.fgColor = "red";
+        }
     </script>
 </head>
 <body>
-
+    <button onclick="changeColor()"> 호출 (익명함수)</button>
 </body>
 </html>
