@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+        div {
+            margin: 20px;
+            padding: 20px;
+            border: 20px solid rgb(128, 128, 128);
+            width: 500px;
+        }
+        .contentbox{
+            /*default*/
+            box-sizing: content-box;
+        }
+        .borderbox{
+            /*width500정의*/
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="contentbox">
+        <p>content-box</p>
+    </div>
+    <div class="borderbox">
+        <p>border-box</p>
+    </div>
+
+</body>
+</html>

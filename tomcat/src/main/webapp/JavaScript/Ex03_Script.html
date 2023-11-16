@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        문서가 실행되면 웹 브라우저는 메모리에 body안에 있는 모든 요소 로딩 ...
+        그 메모리를 DOM (계층 트리) .. DOM을 가지고 놀면 됨
+
+         */
+        function print() {
+            let ele = document.getElementById("demo");
+            console.log(ele);
+            ele.innerHTML = "아 배고프다"; //글자를 바꿔버림.
+        }
+    </script>
+</head>
+<body>
+    <button onclick="print()">클릭하세요</button>
+    <p id="demo">demo라는 id는 p태그의 식별자</p>
+</body>
+</html>

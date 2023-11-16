@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        let name = "kim";
+        function call(){
+            let age = 20;
+            console.log("이름:" + name + " 나이는" + age);
+        }
+        call();
+        let n; //초기화 되어 있지 않다(정의되지 않았다)
+        console.log(n);//undefined
+        n = 100; //사용하기 전에만 초기화 하면 됨
+        let i, j;
+        i = 200;
+        j = 300;
+        let result = i + j;
+        console.log(result);
+
+        let intnum = 10;
+        let dnum = 12.345;
+        let flag = true;
+        let str = null;
+        let str2 = "ABC";
+
+        console.log(typeof (str)); //object
+        console.log(typeof (str2)); //string
+
+        let num1 = 10;
+        let num2 = 3;
+        document.write((num1/num2)+"<br>");
+
+        //동치연산자
+        // === , !== 연산은 타입과 값 두가지 모두 같아야 한다.
+        console.log(1 === 1); //true
+        console.log(1 == '1');//true
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

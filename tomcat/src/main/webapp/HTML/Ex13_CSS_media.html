@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    /* 800px 이하의 좁은 화면에서 css 적용되는 요소는 배경 토마토*/
+    @media(max-width: 800px){
+      .small-tomato {
+        background-color: tomato;
+      }
+    }
+    @media(min-width: 800px){
+      .large-gray {
+        background-color: grey;
+      }
+    }
+    @media(max-width: 600px){
+    /*  600이하 적용*/
+      .desktop {
+        display: none;
+      }
+    }
+    @media(min-width: 600px){
+      /*  600이하 적용*/
+      .desktop {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="small-tomato">좁은 화면에서 배경색이 토마토</div>
+  <div class="large-gray">좁은 화면에서 배경색이 토마토</div>
+  <div class="desktop">미디어 디스플레이</div>
+</body>
+</html>
