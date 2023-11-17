@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .democlass{color: red}
+    </style>
+</head>
+<body>
+    <div id="div">
+        <h1 class="democlass">Hello World_1</h1>
+        <h1 class="democlass">Hello World_2</h1>
+        <h1 class="democlass">Hello World_3</h1>
+    </div>
+
+</body>
+<script>
+    //document.getElementsByTagName("h1")[0].removeAttribute("class");
+    /*
+    let array = document.getElementsByTagName("h1");
+    console.log(array);
+
+    for (let i = 0; i < array.length; i++) {
+        array[i].removeAttribute("class");
+    }*/
+
+    let array = document.getElementsByTagName("h1");
+    //console.log(array);
+
+    // for (let index in array) {
+    //     console.log(array[index]);
+    //     document.getElementById("div").removeChild(array[index]);
+    // }
+
+    for (let index in array) {
+        document.getElementById("div").removeChild(array[array.length - 1]);
+    }
+
+
+</script>
+</html>
