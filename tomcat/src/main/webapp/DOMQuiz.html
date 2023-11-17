@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<body>
+<!--
+a click 이벤트를 동적으로 부여하시고 (addEvent...)
+다음 >> images/2.jpg   다음 >> images/3.jpg   다음 >> images/4.jpg  다음 >> images/1.jpg
+이전 >> images/4.jpg   이전 >> images/3.jpg
+*/
+
+-->
+    <h3>DOM 슬라이드</h3>
+    <img src="images/1.jpg" alt="이미지" id="imgs" width="200" height="200">
+    <hr>
+    <a href="#" id="prv">이전</a>||<a href="#" id="next">다음</a>
+</body>
+
+<script>
+    let prv = document.getElementById("prv");
+    let next = document.getElementById("next");
+    prv.addEventListener("click",myFunc2)
+    next.addEventListener("click",myFunc)
+    let index = 1;
+    function myFunc(){
+        //index = ((index+1) % 4 )+ 1;
+        index = index+1;
+        if(index === 5) index = 1;
+        console.log(index);
+        document.getElementById("imgs").setAttribute("src","images/"+index+".jpg");
+
+    }
+    function myFunc2(){
+        index = index-1;
+        if(index === 0) index = 4;
+        console.log(index);
+        document.getElementById("imgs").setAttribute("src","images/"+index+".jpg");
+    }
+</script>
+</html>
