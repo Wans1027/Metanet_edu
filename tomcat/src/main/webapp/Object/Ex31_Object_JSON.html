@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        let myObj = {name:"john", age:30, city:"seoul"};
+
+        //객체 to 문자열
+        const str = JSON.stringify(myObj);
+        console.log(str);
+        console.log(typeof (str)); //String
+
+        //문자열 to 객체
+        //조건: JSON 문자열에서 반드시 속성값은 "",''안에 정의
+
+        //let str2 = '{name:"john", age:30, city:"seoul"}';
+        //console.log(JSON.parse(str2));//Error
+
+        let str2 = '{"name":"john", "age":30, "city":"seoul"}';
+        console.log(JSON.parse(str2));
+
+        strObj = JSON.parse(str2);
+        console.log(str2.name); //객체.속성명
+        console.log(str2["name"]);//객체["속성명"]
+        /*
+            index.html, index.htm
+            css >> common.css
+            javascript >> common.js
+            json >> common.json >> 형식(MIME) >> application/json
+            xml >> common.xml
+         */
+
+        let mycars;
+        mycars = {
+            "name": "king", "age": 20,
+                "cars": [
+                    {"name": "Ford", "model": ["Mustang", "Focus"]},
+                    {"name": "BMW", "model": ["520", "x5", "x7"]},
+                    {"name": "Fiat", "model": ["500", "panda"]}
+                ]
+        };
+        //차량의 이름과 모델명을 출력
+        //Ford - Mustan Focus 출력
+        //BMW - 520 x5 x7
+
+        for (let mc of mycars.cars) {
+            let result = mc.name + " - ";
+            for (let mo of mc.model) {
+                result = result + mo + " ";
+            }
+            console.log(result);
+            document.write("<hr>" + result);
+        }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
