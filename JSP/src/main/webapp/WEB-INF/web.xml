@@ -3,4 +3,11 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
          version="5.0">
+<!--    Error 페이지 설정 가능
+        1. 상태코드 500, 404 등 마다 페이지를 만드렁서 서비스 가능
+        2. 예외처리 별로 (세분화) : Nullpoint 처리페이지 , indexOutOfBound 처리페이지-->
+<!--    <error-page>-->
+<!--        <error-code>500</error-code>-->
+<!--        <location>/error/Error500.jsp</location>-->
+<!--    </error-page>-->
 </web-app>
