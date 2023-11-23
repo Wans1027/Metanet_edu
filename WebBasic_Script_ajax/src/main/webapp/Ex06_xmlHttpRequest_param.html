@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        let xhr = null;
+
+        function getInstance() {
+            if(window.XMLHttpRequest){
+                xhr = new XMLHttpRequest;
+            }else if(window.ActiveXObject){ //IE
+                console.log("IE");
+            }else{
+                throw new Error("Ajax 비동기 지원하지 않아요");
+            }
+            return xhr
+        }
+
+        function handlerStateChange() {//콜백 용도
+            if(xhr.readyState == 4){ //서버에서 응답이 왔다면
+                if(xhr.status >= 200 && xhr.status < 300){ //응답이 성공적이라면
+                    //서버가 클라이언트에게 전달한 (응답한) 데이터 형식
+                    //1. Text(html,txt,css,json)  2. xml
+
+                    //개발자 영역... 가공...(데이터 가공)
+                    console.log(xhr.responseText);
+                    let tempArray=[];
+                    tempArray = xhr.responseText.split(",");
+                    let printdata = "";
+                    for (let data of tempArray) {
+                        printdata+=data;
+                    }
+
+                    document.getElementById("div_view").innerHTML = printdata;
+                }else{
+                    console.log("비정상 응답 : " + xhr.status);
+                }
+            }
+        }
+
+        function sendData(){
+            xhr = getInstance();
+            xhr.onreadystatechange = handlerStateChange;
+
+            const key = document.getElementById("select_menu").selectedIndex;
+            xhr.open("POST", "EX06_Server_Param.jsp?no=" + key);
+            xhr.send(); //여행시작
+        }
+    </script>
+</head>
+<body>
+    <h3>Ajax param 값 처리하기</h3>
+    <div style="background-color:rgb(128,128,128);width: 500px;text-align: center;">
+        <hr style="color: red">
+        <select id="select_menu" onchange="sendData()">
+            <option>0번 index</option>
+            <option>1번 index</option>
+            <option>2번 index</option>
+        </select>
+    </div>
+    <span id="div_view"></span>
+</body>
+</html>

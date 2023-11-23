@@ -3,10 +3,4 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
          version="5.0">
-    <!--
-      SimpleController 파일 어떤 요청에 의해서 컴파일 되고 실행 .....
-      <url-pattern>/simple</url-pattern>
-
-      http://localhost:8090/WebServlet_1/simple 요청을 보내면 ... get ,post 판단 ..함수자동 실행
-    -->
 </web-app>
