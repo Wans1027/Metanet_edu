@@ -5,6 +5,9 @@ import kr.or.kosa.utils.ConnectionHelper;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 /*
  1. DB DBCP 사용
@@ -36,6 +39,32 @@ public class RegisterDao {
 			ConnectionHelper.close(conn); //반환
 		}
 		return result;
-		
+	}
+	public boolean isAlreadyExistEmpno(int empno){
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		List<Integer> result = new ArrayList<>();
+		try {
+			conn = ConnectionHelper.getConnection("oracle");
+			String sql="select empno from emp";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.executeUpdate();
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				result.add(rs.getInt("empno"));
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}finally {
+			ConnectionHelper.close(pstmt);
+			ConnectionHelper.close(conn); //반환
+		}
+		for (Integer i : result) {
+			if (empno == i){
+				System.out.println("중복");
+				return true;
+			}
+		}
+		return false;
 	}
 }

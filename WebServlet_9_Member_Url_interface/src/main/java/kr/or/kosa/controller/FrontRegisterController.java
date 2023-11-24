@@ -1,6 +1,7 @@
 package kr.or.kosa.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -123,6 +124,32 @@ public class FrontRegisterController extends HttpServlet {
 		else if (urlcommand.equals("/searchbynameOk.do")) {
 			action = new SearchByNameAction();
 			forward = action.execute(request, response);
+		}
+		else if (urlcommand.equals("/test.do")) {
+			System.out.println("호출됨!!!!");
+			request.setCharacterEncoding("UTF-8");
+			RegisterDao registerDao = new RegisterDao();
+			int empno = Integer.parseInt(request.getParameter("empno"));
+			System.out.println(empno);
+			boolean alreadyExistEmpno = registerDao.isAlreadyExistEmpno(empno);
+			System.out.println(alreadyExistEmpno);
+
+			response.setCharacterEncoding("utf-8");
+			response.setStatus(200);
+			response.getWriter().write("aaaa");
+			response.setContentType("application/json");
+			response.setCharacterEncoding("UTF-8");
+
+			String jsonResponse;
+			if (alreadyExistEmpno) {
+				jsonResponse = "{\"isExist\": false}";
+			} else {
+				jsonResponse = "{\"isExist\": true}";
+			}
+
+			try (PrintWriter out = response.getWriter()) {
+				out.print(jsonResponse);
+			}
 		}
     	
     	if(forward != null) {
