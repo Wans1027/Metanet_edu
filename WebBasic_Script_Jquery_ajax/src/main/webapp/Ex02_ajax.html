@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        /*
+            jQuery.ajax(url, [,settings])
+            '
+            settings >> 여러가지 옵션  >> {JSON 객체 형태로}
+
+            contentType (default: 'application/x-www-form-urlencoded; charset=UTF-8')
+
+            서버가 클라이언트에게 응답하는 데이터 형식 정의
+            dataType (default: Intelligent Guess (xml, json, script, or html))
+         */
+        $(function () {
+            $('#message').click(function () {
+                //비동기 함수 호출
+                $.ajax(
+                    {
+                        url: "Ex02_menu.html",
+                        dataType: "html", //서버가 클라이언트에게 응답하는 데이터 형식은 html
+                        success: function (responseText) { //응답이 왔고, 정상이면 parameter로 데이터 전송
+                            console.log(responseText);
+                            //가공
+                            $('#menudiv').html($(responseText).find('li'));
+                        }
+
+                    }
+                );
+            });
+
+        });
+    </script>
+</head>
+<body>
+<div id="menudiv">
+    <a href="#" id="menu"></a>
+</div>
+<span id="message">클릭하세요</span>
+</body>
+</html>

@@ -40,7 +40,7 @@
 
 			$('table > tbody > tr').each(function(index, element){
 				let arr = [];
-				$(this).find('td').each(function(i, e) {
+				$(element).find('td').each(function(i, e) {
 					arr.push($(e).text());
 				});
 				arrayobj.push({th: arr[0], name: arr[1], age: arr[2]});
