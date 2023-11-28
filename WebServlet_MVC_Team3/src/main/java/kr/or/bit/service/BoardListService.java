@@ -45,7 +45,7 @@ public class BoardListService implements Action{
 			List<Board> list = dao.list(cpage, pagesize);
 			
 			int pagersize=3; 
-			ThePager pager = new ThePager(totalboardcount,cpage,pagesize,pagersize,"/WebServlet_92_Board_Model1/board_list.meta");
+			ThePager pager = new ThePager(totalboardcount,cpage,pagesize,pagersize,"/board_list.meta");
 			
 			request.setAttribute("pagesize", pagesize);
 			request.setAttribute("cpage", cpage);

@@ -13,8 +13,6 @@ import kr.or.bit.action.Action;
 import kr.or.bit.action.ActionForward;
 import kr.or.bit.service.BoardContentService;
 import kr.or.bit.service.BoardDeleteOkService;
-import kr.or.bit.service.BoardEditOkService;
-import kr.or.bit.service.BoardEditService;
 import kr.or.bit.service.BoardListService;
 import kr.or.bit.service.BoardWriteService;
 import kr.or.bit.service.EditOkServiceAction;
@@ -44,28 +42,16 @@ public class Frontboardcontroller extends HttpServlet {
 		ActionForward forward = null;
 
 		if (urlcommand.equals("/board_content.meta")) {
-
 			action = new BoardContentService();
 			forward = action.execute(request, response);
 		} else if (urlcommand.equals("/board_list.meta")) {
-
 			action = new BoardListService();
 			forward = action.execute(request, response);
 		} else if (urlcommand.equals("/board_delete.meta")) {
-
 			forward = new  ActionForward();
     		forward.setPath("/WEB-INF/views/board/board_delete.jsp");
 		} else if (urlcommand.equals("/board_deleteok.meta")) {
-
 			action = new BoardDeleteOkService();
-			forward = action.execute(request, response);
-		} else if (urlcommand.equals("/board_edit.meta")) {
-
-			action = new BoardEditService();
-			forward = action.execute(request, response);
-		} else if (urlcommand.equals("/board_editok.meta")) {
-
-			action = new BoardEditOkService();
 			forward = action.execute(request, response);
 		} else if (urlcommand.equals("/board_write.meta")) {
     		forward = new ActionForward();

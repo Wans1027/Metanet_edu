@@ -21,6 +21,8 @@ public class EditServiceAction implements Action{
 			PrintWriter out = response.getWriter();
 			
 			String idx = request.getParameter("idx");
+			String cpage = request.getParameter("cp");
+			String pagesize = request.getParameter("ps");
 			
 			if(idx == null || idx.trim().equals("")){
 				forward.setRedirect(true);
@@ -37,6 +39,9 @@ public class EditServiceAction implements Action{
 			} else {
 				request.setAttribute("board", board);
 				request.setAttribute("idx", idx);
+				request.setAttribute("cp", cpage);
+				request.setAttribute("ps", pagesize);
+				
 				forward.setRedirect(false); //forward 방식
 				forward.setPath("/WEB-INF/views/board/board_edit.jsp");
 			}

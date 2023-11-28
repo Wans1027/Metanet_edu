@@ -41,10 +41,11 @@ public class BoardWriteService implements Action {
 		
 	    if(result > 0){
 	    	msg ="insert success";
-	    	url ="/WebServlet_92_Board_Model1/board_list.meta";
+	    	url ="/board_list.meta";
+			//WebServlet_92_Board_Model1/
 	    }else{
 	    	msg="insert fail";
-	    	url="/WebServlet_92_Board_Model1/board_write.meta";
+	    	url="/board_write.meta";
 	    }
 	    
 	    System.out.println(msg);

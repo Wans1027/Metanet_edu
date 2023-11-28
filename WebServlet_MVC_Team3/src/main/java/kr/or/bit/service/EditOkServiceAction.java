@@ -23,6 +23,8 @@ public class EditOkServiceAction implements Action{
 			PrintWriter out = response.getWriter();
 		
 			String idx = request.getParameter("idx");
+			String cpage = request.getParameter("cp");
+			String pagesize = request.getParameter("ps");
 			  
 			if(idx == null || idx.trim().equals("")){
 				out.print("<script>");
@@ -38,7 +40,7 @@ public class EditOkServiceAction implements Action{
 			String url="";
 			if(result > 0){
 				msg="edit success";
-				url="board_list.meta";
+				url="board_content.meta?idx="+idx+"&cp="+cpage+"&ps="+pagesize;
 			}else{
 				msg="edit fail";
 				url="board_edit.meta?idx="+idx;

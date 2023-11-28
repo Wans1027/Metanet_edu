@@ -24,10 +24,10 @@ public class BoardDeleteOkService implements Action{
 			String url="";
 			if(result > 0){
 				msg="delete success";
-				url="/WebServlet_92_Board_Model1/board_list.meta";
+				url="/board_list.meta";
 			}else{
 				msg="delete fail";
-				url="/WebServlet_92_Board_Model1/board_list.meta";
+				url="/board_list.meta";
 			}
 			
 			request.setAttribute("board_msg",msg);

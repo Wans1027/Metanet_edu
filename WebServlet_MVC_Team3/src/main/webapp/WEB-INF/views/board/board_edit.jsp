@@ -54,7 +54,7 @@
 	<div id="pageContainer">
 		<div style="padding-top: 25px; text-align: center">
 			<!-- form 시작 -->
-			<form name="edit" action="${pageContext.request.contextPath}/board_editok.meta" method="POST">
+			<form name="edit" action="${pageContext.request.contextPath}/board_editok.meta?cp=${requestScope.cp}&ps=${requestScope.ps}" method="POST">
 				<center>
 					<table width="90%" border="1">
 						<tr>
